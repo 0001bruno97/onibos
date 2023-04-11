@@ -24,7 +24,7 @@
         }
         .P00
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -34,7 +34,7 @@
         }
         .P01
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -44,7 +44,7 @@
         }
         .P10
         {
-            background-color: green;
+          
             position: absolute;
             width: 50px;
             height: 50px;
@@ -54,7 +54,7 @@
         }
         .P11
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -64,7 +64,7 @@
         }
         .P20
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -74,7 +74,7 @@
         }
         .P21
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -84,7 +84,7 @@
         }
         .P30
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -94,7 +94,7 @@
         }
         .P31
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -104,7 +104,7 @@
         }
         .P40
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -114,7 +114,7 @@
         }
         .P41
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -124,7 +124,7 @@
         }
         .P50
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -134,7 +134,7 @@
         }
         .P51
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -144,7 +144,7 @@
         }
         .P02
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -154,7 +154,7 @@
         }
         .P03
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -164,7 +164,7 @@
         }
         .P12
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -174,7 +174,7 @@
         }
         .P13
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -184,7 +184,7 @@
         }
         .P22
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -194,7 +194,7 @@
         }
         .P23
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -204,7 +204,7 @@
         }
         .P32
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -214,7 +214,7 @@
         }
         .P33
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -224,7 +224,7 @@
         }
         .P42
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -234,7 +234,7 @@
         }
         .P43
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -244,7 +244,7 @@
         }
         .P52
         {
-            background-color: green;
+           
             position: absolute;
             width: 50px;
             height: 50px;
@@ -254,7 +254,7 @@
         }
         .P53
         {
-            background-color: green;
+            
             position: absolute;
             width: 50px;
             height: 50px;
@@ -273,20 +273,6 @@
             left: calc(50% - 253px);
         }
 
-        .verde
-        {
-            background-color: green;
-            cursor: pointer;
-        }
-        .vermelho
-        {
-            background-color: red;
-        }
-        .container 
-        {
-            padding-top: 50px;
-            padding-bottom: 80px;
-        }
 
     </style>
 </head>
@@ -330,24 +316,34 @@
 </body>
 
 <script>
-     var vendido = 0;
-   var mensagem = document.getElementById("mensagem");
-   function Preencher(id) 
-    {
-        var div = document.getElementById(id);
-        div.classList.toggle("vermelho");
 
-        if (div.classList.contains('vermelho')) 
+   function Limpar()
+   {
+        for(linha=0;linha<=5;linha++)
         {
-            vendido++
-        } else
-        {
-            vendido--
+            for(coluna=0;coluna<=3;coluna++)
+            {
+                meu_id = "P" + linha + coluna
+                document.getElementById(meu_id).style.backgroundColor = "green"
+            }
         }
-        mensagem.innerHTML = "poltronas vendidas: " + vendido;
+  }
+    vendida = 0
+    function Preencher(meu_id)
+    {
+       if ( document.getElementById(meu_id).style.backgroundColor == "green")
+       {
+            document.getElementById(meu_id).style.backgroundColor = "red"
+            vendida = vendida + 1
+            mensagem.innerHTML  = "potronas vendidas; " + vendida
+       }
+       else
+       {
+            document.getElementById(meu_id).style.backgroundColor = "green"
+            vendida = vendida - 1
+            mensagem.innerHTML  = "potronas vendidas; " + vendida
+       }
     }
-
-    
 
   
 
